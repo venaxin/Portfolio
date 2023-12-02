@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume</title>
+    <title>Hussain's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/6c08a6e84f.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
+    <div class="header">
+        <div class="progress-container">
+            <div class="progress-bar" id='myBar'></div>
+        </div>
+    </div>
     <!--<img src="./images/pfp.jpg" style="float: right; height: 150px;width: 150px; border-radius: 50%; border: 1px solid ;" alt="This is a small profile image of Abdul Rahman Hussain Siddique." > -->
     <h1 class="ui-title" role="heading" aria-level="1">
         <div style="float:right">
@@ -18,62 +24,67 @@
         </center>
     </h1>
    
-        <h3 class="aim">Software Developer</h3>
+        <h3 class="aim">Full Stack Web Developer</h3>
+    
     <hr>
+    <div class="about divisions">
     <h2>Objective Statement</h2>
-    <p>Seeking an opportunity in software development 
+    <p>Seeking an opportunity in web development 
         where I can leverage my strong foundation in
         programming languages, problem-solving skills,
-        and passion for creating innovative software
+        and passion for creating innovative web
         solutions. Committed to expanding my knowledge
-        of software development methodologies and
+        of web development methodologies and
         technologies while collaborating with a dynamic
         team. As a fresher, I aspire to contribute to
         impactful projects, gain practical experience,
         and develop the necessary skills for a successful
-        career in software development.</p>
+        career in web development.</p>
+    </div>
     <hr>
-    <h2>Education</h2>
-    <p><strong>Bachelor's Degree in Information Technology</strong>  - 2020-2024<br>
-    <small>Osmania university • Hyderabad,TS</small></p>
+    
+    <div class="qualifications divisions">
+        <h2>Education</h2>
+        <p><strong>Bachelor's in Engineering [BE] in Information Technology</strong>  - 2020-2024<br>
+        <small>Osmania university • Hyderabad,TS</small></p>
+        <hr>
+    </div>
     <hr>
+    <div class="skills divisions">
     <h2>Skills</h2>
     <ul>
-        <li>Extensive knowledge in programming languages [Python, Javascript, C++],</li>
-        <progress value="50" max="100"><progress>
-        <li>Frontend Development [HTML, CSS],</li>
-        <li>Frameworks [Bootstrap],</li>
-        <li>Library [React, npm],</li>
-        <li>Familiar with version control systems like git,</li>
+        <li>Extensive knowledge in programming languages [Python, Java, C, C++]</li>
+        <!-- <progress value="65" max="100"></progress> -->
+        <li>Frontend technologies [HTML, CSS, Bootstrap, React.js]</li>
+        <li>Backend technologies [Node.js, Javascript]</li>
+        <li>Familiar with version control systems like git</li>
         <li>Familiarity with Azure cloud computing</li>
     </ul>
+    </div>
     <hr>
+    
     <h2>Projects</h2>
-    <dl>
-        <dt><a style="color: gray; text-decoration: none;" 
-            onMouseOver="this.style.color='#0F0'"
-            onMouseOut="this.style.color='gray'"
-            href="https://campusclubhouse.web.app/" >
-            <li style="list-style-image: url(./images/CC.ico); font-size: large;">
-                <strong>CampusClubhouse</strong>
-            </li>
-        </a></dt>
-        <dd>A student-focused social media platform connecting students and facilitating in-person and virtual activities, gatherings, and events. It provides insights for organizers to analyze responses, design effectiveness, performance, and attendee reviews.</dd>
-    </dl>
+    <section class="project-board divisions">
+        <!-- dynamically adding projects -->
+    </section>  
     <hr>
+    <div class="hobby divisions">  
     <h2>Hobbies</h2>
     <ul>
         <li>Sketching</li>
         <li>Reading</li>
         <li>Football, Cricket</li>
     </ul>
+</div>
     <hr>
+    <div class="certifications divisions">
     <a  style="color: grey; text-decoration: none;" 
         onMouseOver="this.style.color='#0F0'"
         onMouseOut="this.style.color='gray'"
         href="./images/5.gif">
         <h2>Certifications</h2>
     </a>
+</div>
     <hr>
     <footer>
         <div class="wrapper">    
@@ -96,6 +107,6 @@
         </div>
         <p class="copyright">©2023 Abdul Rahman Hussain Siddique | All rights reserved</p>  
     </footer>
-            
+    <script src="./script.js"></script>
 </body>
 </html>
