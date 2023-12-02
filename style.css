@@ -35,7 +35,7 @@ hr {
 }
 .progress-bar {
   height: 8px;
-  background: url(./images/cyan.gif);
+  background: url(./images/gold4.gif);
   background-repeat: no-repeat;
   background-size: cover;
   width: 0%;
@@ -45,10 +45,14 @@ body {
   /*background-image: url(./images/4.gif);*/
   margin: 20px;
   font-family: helvetica, arial, sans-serif;
-  background-color: aliceblue; /* #2e2e31; */
+  background: linear-gradient(
+    109.6deg,
+    rgba(0, 0, 0, 0.93) 11.2%,
+    rgb(63, 61, 61) 78.9%
+  );
   background-repeat: no-repeat;
   background-size: cover;
-  color: black;
+  color: blanchedalmond;
   display: grid;
   height: 100%;
   max-width: 100%;
@@ -61,7 +65,14 @@ body::-webkit-scrollbar {
 }
 
 body h2 {
-  color: #fffbf1;
+  background: linear-gradient(
+    109.6deg,
+    rgb(255, 219, 47) 11.2%,
+    rgb(244, 253, 0) 100.2%
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
   text-shadow: 0 20px 25px #2e2e31, 0 40px 60px #2e2e31;
   text-align: center;
 }
@@ -86,7 +97,7 @@ h2 {
 }
 a {
   text-decoration: none;
-  color: black;
+  color: blanchedalmond;
 }
 /* a:hover {
   color: whitesmoke;
@@ -102,6 +113,14 @@ footer {
 }
 .copyright {
   margin: 10px 0 0 0;
+  background: linear-gradient(
+    109.6deg,
+    rgb(255, 219, 47) 11.2%,
+    rgb(244, 253, 0) 100.2%
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .project-board {
