@@ -134,7 +134,7 @@ footer {
   width: 20%;
   border-radius: 15px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.262);
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
   position: relative;
@@ -154,6 +154,14 @@ footer {
   margin-bottom: 100;
 }
 .project-title {
+  background: linear-gradient(
+    109.6deg,
+    rgb(146, 146, 146) 11.2%,
+    rgb(255, 255, 255) 100.2%
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
   padding: 3% 0px;
   text-align: center;
 }
