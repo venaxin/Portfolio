@@ -1,112 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hussain's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/6c08a6e84f.js" crossorigin="anonymous"></script>
-    
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/6c08a6e84f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <div class="header">
-        <div class="progress-container">
-            <div class="progress-bar" id='myBar'></div>
-        </div>
+      <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+      </div>
     </div>
     <!--<img src="./images/pfp.jpg" style="float: right; height: 150px;width: 150px; border-radius: 50%; border: 1px solid ;" alt="This is a small profile image of Abdul Rahman Hussain Siddique." > -->
     <h1 class="ui-title" role="heading" aria-level="1">
-        <div style="float:right">
-           <img src="./images/pfp.jpg" style="height: 140px;width: 150px; border-radius: 50%; border: 2px solid whitesmoke; margin: 0 10px ;" alt="This is a small profile image of Abdul Rahman Hussain Siddique.">
-        </div>
-        <center>
-            Abdul Rahman Hussain Siddique
-        </center>
+      <div class="persona">
+        <img
+          src="./images/pfp.jpg"
+          style="
+            height: 140px;
+            width: 150px;
+            border-radius: 50%;
+            border: 2px solid whitesmoke;
+            margin: 0 10px;
+          "
+          alt="This is a small profile image of Abdul Rahman Hussain Siddique."
+        />
+      </div>
+      <center>Abdul Rahman Hussain Siddique</center>
     </h1>
-   
-        <h3 class="aim">Full Stack Web Developer</h3>
-    
-    <hr>
+
+    <h3 class="occupation">Full Stack Web Developer</h3>
+
+    <hr />
     <div class="about divisions">
-    <h2>Objective Statement</h2>
-    <p>Seeking an opportunity in web development 
-        where I can leverage my strong foundation in
-        programming languages, problem-solving skills,
-        and passion for creating innovative web
-        solutions. Committed to expanding my knowledge
-        of web development methodologies and
-        technologies while collaborating with a dynamic
-        team. As a fresher, I aspire to contribute to
-        impactful projects, gain practical experience,
-        and develop the necessary skills for a successful
-        career in web development.</p>
+      <h2>Objective Statement</h2>
+      <p>
+        Seeking an opportunity in web development where I can leverage my strong
+        foundation in programming languages, problem-solving skills, and passion
+        for creating innovative web solutions. Committed to expanding my
+        knowledge of web development methodologies and technologies while
+        collaborating with a dynamic team. As a fresher, I aspire to contribute
+        to impactful projects, gain practical experience, and develop the
+        necessary skills for a successful career in web development.
+      </p>
     </div>
-    <hr>
-    
+    <hr />
+
     <div class="qualifications divisions">
-        <h2>Education</h2>
-        <p><strong>Bachelor's in Engineering [BE] in Information Technology</strong>  - 2020-2024<br>
-        <small>Osmania university • Hyderabad,TS</small></p>
-        <hr>
+      <h2>Education</h2>
+      <p>
+        <strong
+          >Bachelor's in Engineering [BE] in Information Technology</strong
+        >
+        - 2020-2024<br />
+        <small>Osmania university • Hyderabad,TS</small>
+      </p>
+      <hr />
     </div>
-    <hr>
+    <hr />
     <div class="skills divisions">
-    <h2>Skills</h2>
-    <ul>
-        <li>Extensive knowledge in programming languages [Python, Java, C, C++]</li>
+      <h2>Skills</h2>
+      <ul>
+        <li>
+          Extensive knowledge in programming languages [Python, Java, C, C++]
+        </li>
         <!-- <progress value="65" max="100"></progress> -->
         <li>Frontend technologies [HTML, CSS, Bootstrap, React.js]</li>
         <li>Backend technologies [Node.js, Javascript]</li>
         <li>Familiar with version control systems like git</li>
         <li>Familiarity with Azure cloud computing</li>
-    </ul>
+      </ul>
     </div>
-    <hr>
-    
+    <hr />
+
     <h2>Projects</h2>
     <section class="project-board divisions">
-        <!-- dynamically adding projects -->
-    </section>  
-    <hr>
-    <div class="hobby divisions">  
-    <h2>Hobbies</h2>
-    <ul>
+      <!-- dynamically adding projects -->
+    </section>
+    <hr />
+    <div class="hobby divisions">
+      <h2>Hobbies</h2>
+      <ul>
         <li>Sketching</li>
         <li>Reading</li>
         <li>Football, Cricket</li>
-    </ul>
-</div>
-    <hr>
+      </ul>
+    </div>
+    <hr />
     <div class="certifications divisions">
-    <a  style="color: grey; text-decoration: none;" 
+      <a
+        style="color: grey; text-decoration: none"
         onMouseOver="this.style.color='#0F0'"
         onMouseOut="this.style.color='gray'"
-        href="./images/5.gif">
+        href="./images/5.gif"
+      >
         <h2>Certifications</h2>
-    </a>
-</div>
-    <hr>
+      </a>
+      <div class="carousel-container">
+        <div class="prev-btn">&lt;</div>
+        <div class="carousel-slide"></div>
+        <div class="carousel-slide"></div>
+        <div class="carousel-slide"></div>
+        <div class="next-btn">&gt;</div>
+      </div>
+    </div>
+    <hr />
     <footer>
-        <div class="wrapper">    
-            <div class="button" onclick="window.location.href = 'https://www.facebook.com/abdulrahman918';">
-                <div class="icon"><i class="fa fa-facebook-f"></i></div>
-                <span>Facebook</span>
-            </div>
-            <div class="button" onclick="window.location.href = 'https://www.instagram.com/rahmannhussainn/';">
-                <div class="icon"><i class="fa fa-instagram"></i></div>
-                <span>Instagram</span>
-            </div>
-            <div class="button" onclick="window.location.href = 'https://github.com/venaxin';">
-                <div class="icon"><i class="fa fa-github"></i></div>
-                <span>Github</span>
-            </div>
-            <div class="button" onclick="window.location.href = 'https://www.linkedin.com/in/abdul-rahman-hussain/';">
-                <div class="icon"><i class="fa fa-linkedin"></i></div>
-                <span>LinkedIn</span>
-            </div>
+      <div class="wrapper">
+        <div
+          class="button"
+          onclick="window.location.href = 'https://www.facebook.com/abdulrahman918';"
+        >
+          <i class="fa fa-facebook-f"></i>
+          <span>Facebook</span>
         </div>
-        <p class="copyright">©2023 Abdul Rahman Hussain Siddique | All rights reserved</p>  
+        <div
+          class="button"
+          onclick="window.location.href = 'https://www.instagram.com/rahmannhussainn/';"
+        >
+          <i class="fa fa-instagram"></i>
+          <span>Instagram</span>
+        </div>
+        <div
+          class="button"
+          onclick="window.location.href = 'https://github.com/venaxin';"
+        >
+          <i class="fa fa-github"></i>
+          <span>Github</span>
+        </div>
+        <div
+          class="button"
+          onclick="window.location.href = 'https://www.linkedin.com/in/abdul-rahman-hussain/';"
+        >
+          <i class="fa fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </div>
+      </div>
+      <p class="copyright">
+        ©2023 Abdul Rahman Hussain Siddique | All rights reserved
+      </p>
     </footer>
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>

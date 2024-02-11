@@ -96,3 +96,56 @@ function scrollIndi() {
 
   document.getElementById("myBar").style.width = scrolled + "%";
 }
+// Certi-carousel
+
+const container = document.querySelector(".carousel-container");
+const slides = document.querySelectorAll(".carousel-slide");
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+let currentIndex = 0;
+
+const imageUrls = [
+  "Certis/DSA.png",
+  "Certis/Webdev.png",
+  "Certis/Postman.png",
+  "Certis/Cloud.jpg",
+  "Certis/React.png",
+];
+
+function createImageElements(startIndex) {
+  slides.forEach((slide, index) => {
+    const imgIndex = (startIndex + index) % imageUrls.length;
+    const img = document.createElement("img");
+    img.src = imageUrls[imgIndex];
+    img.alt = `Slide ${imgIndex + 1}`;
+    img.classList.add("show");
+    img.style.opacity = 0; // Set initial opacity to 0
+    slide.innerHTML = "";
+    slide.appendChild(img);
+
+    // Delay setting opacity to 1 to allow the previous image to fade out
+    setTimeout(() => {
+      img.style.opacity = 1;
+    }, 50); // Adjust the delay time if needed
+  });
+}
+
+createImageElements(currentIndex);
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % imageUrls.length;
+  createImageElements(currentIndex);
+}
+
+// Function to show previous set of images
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + imageUrls.length) % imageUrls.length;
+  createImageElements(currentIndex);
+}
+
+// Add event listeners to buttons
+nextBtn.addEventListener("click", nextSlide);
+prevBtn.addEventListener("click", prevSlide);
+
+// Automatically change slide every 3 seconds
+setInterval(nextSlide, 3000);
