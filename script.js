@@ -1,3 +1,4 @@
+//Projects Section
 const projects = [
   {
     title: "CampusClubHouse",
@@ -42,7 +43,6 @@ function createProjectCard(project) {
 
   const projectImage = document.createElement("div");
   projectImage.classList.add("project-image");
-  // You can add image content or styling to projectImage if needed
 
   const projectMatter = document.createElement("div");
   projectMatter.classList.add("project-matter");
@@ -66,7 +66,6 @@ function createProjectCard(project) {
   return projectCard;
 }
 
-// Function to add projects to the DOM
 function addProjectsToDOM() {
   const projectBoard = document.querySelector(".project-board");
 
@@ -79,10 +78,10 @@ function addProjectsToDOM() {
     console.error("No element found with class 'project-board'");
   }
 }
-// Call the function to add projects to the DOM
+
 addProjectsToDOM();
 
-// Scroll Indicator
+//Top scroll completion bar
 window.onscroll = function () {
   scrollIndi();
 };
@@ -96,8 +95,8 @@ function scrollIndi() {
 
   document.getElementById("myBar").style.width = scrolled + "%";
 }
-// Certi-carousel
 
+//Certi Carousel
 const container = document.querySelector(".carousel-container");
 const slides = document.querySelectorAll(".carousel-slide");
 const prevBtn = document.querySelector(".prev-btn");
@@ -119,14 +118,13 @@ function createImageElements(startIndex) {
     img.src = imageUrls[imgIndex];
     img.alt = `Slide ${imgIndex + 1}`;
     img.classList.add("show");
-    img.style.opacity = 0; // Set initial opacity to 0
+    img.style.opacity = 0;
     slide.innerHTML = "";
     slide.appendChild(img);
 
-    // Delay setting opacity to 1 to allow the previous image to fade out
     setTimeout(() => {
       img.style.opacity = 1;
-    }, 50); // Adjust the delay time if needed
+    }, 50);
   });
 }
 
@@ -137,15 +135,12 @@ function nextSlide() {
   createImageElements(currentIndex);
 }
 
-// Function to show previous set of images
 function prevSlide() {
   currentIndex = (currentIndex - 1 + imageUrls.length) % imageUrls.length;
   createImageElements(currentIndex);
 }
 
-// Add event listeners to buttons
 nextBtn.addEventListener("click", nextSlide);
 prevBtn.addEventListener("click", prevSlide);
 
-// Automatically change slide every 3 seconds
 setInterval(nextSlide, 3000);

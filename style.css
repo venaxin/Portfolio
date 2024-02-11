@@ -15,6 +15,7 @@
   box-sizing: border-box;
   font-family: "Nunito Sans", sans-serif;
 }
+
 .persona {
   display: flex;
   align-items: center;
@@ -22,6 +23,7 @@
   gap: 10px;
   margin: 20px 0;
 }
+
 hr {
   margin: 10px 0px 10px 0px;
   visibility: hidden;
@@ -34,12 +36,14 @@ hr {
   width: 100%;
   background-color: #f1f1f1;
 }
+
 .progress-container {
   width: 100%;
   margin-left: -20px;
   height: 8px;
   background: #ccc;
 }
+
 .progress-bar {
   height: 8px;
   background: url(./images/gold4.gif);
@@ -49,7 +53,6 @@ hr {
 }
 
 body {
-  /*background-image: url(./images/4.gif);*/
   margin: 20px;
   background: linear-gradient(
     109.6deg,
@@ -64,10 +67,9 @@ body {
   max-width: 100%;
 }
 
-/* Hide scrollbar for WebKit-based browsers */
 body::-webkit-scrollbar {
-  height: 0px; /* x-axis */
-  width: 0px; /* y-axis */
+  height: 0px;
+  width: 0px;
 }
 
 h2 {
@@ -94,9 +96,11 @@ center {
   letter-spacing: -3px;
   margin: 0;
 }
+
 * {
   font-size: 30px;
 }
+
 .divisions {
   min-height: fit-content;
   margin: auto;
@@ -105,29 +109,32 @@ center {
   border-radius: 40px;
   padding: 10px;
 }
+
 p {
   padding: 15px;
 }
+
 ul {
   margin: 0 0 0 15px;
   padding: 15px 30px;
 }
+
 a {
   text-decoration: none;
   color: blanchedalmond;
 }
-/* a:hover {
-  color: whitesmoke;
-} */
+
 .dt,
 dd {
   margin-top: 0px;
   margin-bottom: 0px;
 }
+
 footer {
   display: grid;
   place-items: center;
 }
+
 .copyright {
   margin: 10px 0 0 0;
   background: linear-gradient(
@@ -148,6 +155,7 @@ footer {
   gap: 2rem;
   min-height: 525px;
 }
+
 .project-card {
   margin: 20px 0;
   width: 20%;
@@ -158,6 +166,7 @@ footer {
   transition: transform 0.3s ease-in-out;
   position: relative;
 }
+
 .project-card:hover {
   transform: scale(1.1);
 }
@@ -168,10 +177,12 @@ footer {
   background-image: url(./images/2.jpeg);
   background-size: cover;
 }
+
 .project-matter {
   padding: 15px;
   margin-bottom: 100;
 }
+
 .project-title {
   background: linear-gradient(
     109.6deg,
@@ -184,24 +195,23 @@ footer {
   padding: 3% 0px;
   text-align: center;
 }
+
 .linkable-project .project-title {
-  /* Define the text color for linkable projects */
   background: linear-gradient(to right, #f32170, #ff6b08, #cf23cf, #eedd44);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  background-clip: text; /* Change this to your desired text color */
+  background-clip: text;
 }
 
-/*Initially hide project desc*/
 .project-desc {
   display: none;
   font-size: 15px;
 }
 
-/* Show project description on hover */
 .project-card:hover .project-desc {
   display: block;
 }
+
 @media screen and (max-width: 768px) {
   .project-board {
     flex-direction: column;
@@ -213,10 +223,11 @@ footer {
     height: 20vw;
   }
 }
-/* Certificates */
+
 .certifications {
   height: 560px;
 }
+
 .carousel-container {
   display: flex;
   width: 98%;
@@ -236,16 +247,18 @@ footer {
   display: block;
   width: 100%;
   height: auto;
-  transition: opacity 0.5s ease-in-out; /* Smooth transition */
-  opacity: 0; /* Initially hide the images */
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
 }
 
 .carousel-slide img.show {
-  opacity: 1; /* Show the images smoothly */
+  opacity: 1;
 }
+
 .carousel-slide:nth-child(3) img {
   transform: scale(1.1);
 }
+
 .prev-btn,
 .next-btn {
   position: absolute;
@@ -270,6 +283,7 @@ footer {
   align-items: center;
   justify-content: center;
 }
+
 @media screen and (max-width: 768px) {
   center {
     font-size: 50px;
@@ -282,7 +296,6 @@ footer {
   }
 }
 
-/* Contact us */
 .wrapper {
   display: flex;
   justify-content: space-evenly;
@@ -302,7 +315,7 @@ footer {
   touch-action: manipulation;
   margin: 0 10px;
   padding: 5px 10px 3px 10px;
-  transition: width 0.5s ease-out, padding 0.5s ease-in; /* Smooth transition for width and padding */
+  transition: width 0.5s ease-out, padding 0.5s ease-in;
 }
 
 .button:before {
@@ -337,7 +350,7 @@ footer {
   left: 0;
   top: 0;
   z-index: -1;
-  transition: opacity 0.3s ease-in-out; /* Smooth transition */
+  transition: opacity 0.3s ease-in-out;
   opacity: 0;
 }
 
@@ -349,8 +362,8 @@ footer {
   position: relative;
   display: none;
   z-index: 1;
-  opacity: 0; /* Initially hide the span */
-  transition: opacity 5s ease-in-out; /* Smooth transition for opacity */
+  opacity: 0;
+  transition: opacity 5s ease-in-out;
 }
 
 .button:hover {
@@ -364,5 +377,5 @@ footer {
 
 .button:hover span {
   display: inline-block;
-  opacity: 1; /* Show the span smoothly */
+  opacity: 1;
 }
