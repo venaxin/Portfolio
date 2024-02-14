@@ -10,12 +10,17 @@
 }
 
 @media screen and (max-width: 768px) {
+  body {
+    margin-top: 150px;
+  }
+
   * {
     font-size: 18px;
   }
   .divisions h2 {
     font-size: 39px;
   }
+
   .persona,
   .project-board {
     flex-direction: column;
@@ -70,6 +75,12 @@
   }
   .carousel-slide {
     margin-top: 40%;
+  }
+  .qualifications {
+    padding: 0 10px;
+  }
+  .qualifications p {
+    font-size: 12px;
   }
 }
 
@@ -514,7 +525,7 @@ footer {
   }
 
   #navbar ul li a:hover {
-    color: #ffb700; /* Hover color */
+    color: #ffb700; 
   }
 
   #navbar ul li a.active {
@@ -530,5 +541,15 @@ footer {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
+  }
+
+  body {
+    margin-top: 100px ;
+  }
+  .certifications {
+    height: 225px;
+  }
+  .carousel-container{
+    margin-top: -80px;
   }
 }
