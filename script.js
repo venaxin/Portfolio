@@ -10,22 +10,22 @@ const projects = [
   {
     title: "Intellibot",
     desc: "This project is a system that combines AI-driven chat functionality, image generation, voice interaction, and a user-friendly interface. The system should be capable of engaging in dynamic conversations, generating unique images based on text prompts, listening to user input, synthesizing speech, and providing an intuitive user experience.",
-    isLink: false,
-    link: "https://campusclubhouse.web.app/",
+    isLink: true,
+    link: "https://github.com/sdrahmath/Intellibot",
     imagename: "2.jpeg",
   },
   {
     title: "WeatherWiz",
     desc: "WeatherWiz is a weather forecast website that provides users with accurate and up-to-date weather information for any location around the world. The website offers a user-friendly interface and a range of features to help users plan their activities and stay prepared for changing weather conditions",
-    isLink: false,
-    link: "https://campusclubhouse.web.app/",
+    isLink: true,
+    link: "https://github.com/venaxin/weatherwiz",
     imagename: "2.jpeg",
   },
   {
-    title: "BaymaxBot",
-    desc: "Users can simply input their mathematical expressions, and the bot responds with accurate results in real-time. With its user- friendly interface and seamless integration into Discord, BaymaxBot makes math fun and convenient for everyone in the community.",
-    isLink: false,
-    link: "https://campusclubhouse.web.app/",
+    title: "CodeLab",
+    desc: "Codelab is an online code editor that allows users to write, edit, and execute code in various programming languages directly in the browser. With its intuitive interface and powerful features, Codelab aims to provide developers and learners with a seamless coding experience.",
+    isLink: true,
+    link: "https://github.com/venaxin/codelab",
     imagename: "2.jpeg",
   },
 ];
@@ -146,40 +146,40 @@ prevBtn.addEventListener("click", prevSlide);
 setInterval(nextSlide, 3000);
 
 //scroll spy
-document.addEventListener('DOMContentLoaded', function () {
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('nav ul li a');
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav ul li a");
 
   const observerOptions = {
-      rootMargin: '-50px 0px -50px 0px', // Adjust as needed
+    rootMargin: "-50px 0px -50px 0px", // Adjust as needed
   };
 
   const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-              const targetId = entry.target.id;
-              navLinks.forEach((navLink) => {
-                  navLink.classList.remove('active');
-                  if (navLink.getAttribute('href') === `#${targetId}`) {
-                      navLink.classList.add('active');
-                  }
-              });
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const targetId = entry.target.id;
+        navLinks.forEach((navLink) => {
+          navLink.classList.remove("active");
+          if (navLink.getAttribute("href") === `#${targetId}`) {
+            navLink.classList.add("active");
           }
-      });
+        });
+      }
+    });
   }, observerOptions);
 
   sections.forEach((section) => {
-      observer.observe(section);
+    observer.observe(section);
   });
 
   // Smooth scrolling for internal links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-          e.preventDefault();
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
 
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-              behavior: 'smooth'
-          });
+      document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
       });
+    });
   });
 });

@@ -8,6 +8,7 @@
     transform: translateX(-50%) translateY(-50%) rotate(360deg);
   }
 }
+
 @media screen and (max-width: 768px) {
   * {
     font-size: 18px;
@@ -30,7 +31,7 @@
     font-size: 25px;
   }
   .wrapper {
-    flex-direction: column;
+    width: 40vw;
   }
   .button {
     width: 100%;
@@ -39,17 +40,36 @@
 }
 
 @media screen and (max-width: 480px) {
-  * {
+  .divisions p {
     font-size: 16px;
+  }
+  .divisions p strong,
+  .divisions p small {
+    font-size: 12px;
+  }
+  .divisions ul li {
+    font-size: 16px;
+  }
+  .divisions ul {
+    padding: 15px;
   }
   .divisions h2 {
     font-size: 27px;
   }
   .ui-title center {
-    font-size: 25px;
+    font-size: 0.8rem;
   }
   .occupation {
     font-size: 17px;
+  }
+  .project-title strong {
+    font-size: 20px;
+  }
+  .copyright {
+    font-size: 10px;
+  }
+  .carousel-slide {
+    margin-top: 40%;
   }
 }
 
@@ -127,7 +147,7 @@ h2 {
   background-clip: text;
   text-shadow: 0 20px 25px #2e2e31, 0 40px 60px #2e2e31;
   text-align: center;
-  padding: 25px 0px;
+  padding-top: 20px;
   font-size: 50px;
 }
 
@@ -223,7 +243,7 @@ footer {
 }
 
 .project-matter {
-  padding: 15px;
+  padding: 0 15px;
   margin-bottom: 100;
 }
 
@@ -246,10 +266,13 @@ footer {
   -webkit-background-clip: text;
   background-clip: text;
 }
-
+.project-title strong {
+  font-size: 20px;
+}
 .project-desc {
   display: none;
   font-size: 15px;
+  padding-bottom: 10px;
 }
 
 .project-card:hover .project-desc {
@@ -268,14 +291,10 @@ footer {
   }
 }
 
-.certifications {
-  height: 560px;
-}
-
 .carousel-container {
   display: flex;
   width: 98%;
-  margin: 0 auto 10px auto;
+  margin: 20px auto 10px auto;
   height: 310px;
   position: relative;
 }
@@ -412,18 +431,23 @@ footer {
   display: inline-block;
   opacity: 1;
 }
-/* scrollspy */
+
 .active {
   color: #fffbf1; /* Active color */
   font-weight: bold;
 }
-/* Scroll Spy Navigation Styling */
-#navbar {
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 20px;
-  z-index: 1000;
+
+.menu-toggle {
+  display: none; /* Hide by default */
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin-bottom: 5px;
+  transition: transform 0.3s ease;
 }
 
 #navbar ul {
@@ -454,9 +478,24 @@ footer {
     #ffffff,
     #fffb00,
     #ff7300
-  ); /* Linear gradient background */
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  #navbar ul {
+    display: none;
+  }
+
+  #navbar ul.active {
+    display: block;
+  }
 }
