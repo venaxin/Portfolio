@@ -498,6 +498,7 @@ footer {
 
 @media screen and (max-width: 768px) {
   #navbar {
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
@@ -525,7 +526,7 @@ footer {
   }
 
   #navbar ul li a:hover {
-    color: #ffb700; 
+    color: #ffb700;
   }
 
   #navbar ul li a.active {
@@ -544,12 +545,120 @@ footer {
   }
 
   body {
-    margin-top: 100px ;
+    margin-top: 100px;
   }
   .certifications {
     height: 225px;
   }
-  .carousel-container{
+  .carousel-container {
     margin-top: -80px;
+  }
+}
+.scrollspy-toggle {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 9999;
+  background-color: #222;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, right 0.3s ease;
+}
+
+.scrollspy-toggle:hover {
+  background-color: #333;
+}
+
+.scrollspy-toggle span {
+  color: #ffd700;
+  font-size: 24px;
+}
+
+.scrollspy {
+  position: fixed;
+  top: 50%;
+  right: -300px; /* Initially hidden */
+  transform: translateY(-50%);
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease; /* Smooth transition */
+}
+
+.scrollspy ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.scrollspy ul li {
+  margin-bottom: 10px;
+}
+
+.scrollspy ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.scrollspy ul li a:hover {
+  color: #f0c609;
+}
+
+.scrollspy ul li a.active {
+  font-weight: bold;
+  background: linear-gradient(
+    109.6deg,
+    rgb(255, 219, 47) 11.2%,
+    rgb(244, 253, 0) 100.2%
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 20px 25px #2e2e31, 0 40px 60px #2e2e31;
+}
+
+@media screen and (min-width: 769px) {
+
+  #navbar {
+    display: none;
+  }
+
+  .scrollspy {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 0; 
+    transform: translateY(-50%);
+    background-color: #222; 
+    color: #ffd700; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .scrollspy {
+    display: none;
+  }
+  .scrollspy-toggle {
+    display: none;
+  }
+
+
+  #navbar {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    color: #ffd700; 
+    z-index: 9999;
   }
 }

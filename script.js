@@ -145,9 +145,8 @@ prevBtn.addEventListener("click", prevSlide);
 
 setInterval(nextSlide, 3000);
 
-
-document.querySelector('.menu-toggle').addEventListener('click', function() {
-  document.querySelector('#navbar ul').classList.toggle('active');
+document.querySelector(".menu-toggle").addEventListener("click", function () {
+  document.querySelector("#navbar ul").classList.toggle("active");
 });
 
 //scroll spy
@@ -186,5 +185,42 @@ document.addEventListener("DOMContentLoaded", function () {
         behavior: "smooth",
       });
     });
+  });
+});
+window.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section[id]");
+  const scrollSpy = document.querySelector(".scrollspy");
+
+  window.addEventListener("scroll", function () {
+    let scrollY = window.pageYOffset;
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (
+        scrollY > sectionTop - sectionHeight / 3 &&
+        scrollY <= sectionTop + sectionHeight - sectionHeight / 3
+      ) {
+        scrollSpy
+          .querySelector('a[href="#' + section.id + '"]')
+          .classList.add("active");
+      } else {
+        scrollSpy
+          .querySelector('a[href="#' + section.id + '"]')
+          .classList.remove("active");
+      }
+    });
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollSpyToggle = document.querySelector(".scrollspy-toggle");
+  const scrollSpy = document.querySelector(".scrollspy");
+
+  scrollSpyToggle.addEventListener("click", function () {
+    if (scrollSpy.style.right === "-300px") {
+      scrollSpy.style.right = "20px"; // Show scroll spy
+    } else {
+      scrollSpy.style.right = "-300px"; // Hide scroll spy
+    }
   });
 });
