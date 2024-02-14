@@ -448,19 +448,6 @@ footer {
   font-weight: bold;
 }
 
-.menu-toggle {
-  display: none; /* Hide by default */
-}
-
-.menu-toggle span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  margin-bottom: 5px;
-  transition: transform 0.3s ease;
-}
-
 #navbar ul {
   list-style-type: none;
   padding: 0;
@@ -519,7 +506,7 @@ footer {
 
   #navbar ul li a {
     text-decoration: none;
-    color: #664900;
+    color: #f2d895;
     font-size: 18px;
     transition: all 0.3s ease;
     padding: 10px;
@@ -554,38 +541,15 @@ footer {
     margin-top: -80px;
   }
 }
-.scrollspy-toggle {
-  position: fixed;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  z-index: 9999;
-  background-color: #222;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s ease, right 0.3s ease;
-}
-
-.scrollspy-toggle:hover {
-  background-color: #333;
-}
-
-.scrollspy-toggle span {
-  color: #ffd700;
-  font-size: 24px;
-}
-
 .scrollspy {
   position: fixed;
   top: 50%;
-  right: -300px; /* Initially hidden */
+  right: 0;
   transform: translateY(-50%);
   background-color: #f1f1f1;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: right 0.3s ease; /* Smooth transition */
 }
 
 .scrollspy ul {
@@ -599,8 +563,8 @@ footer {
 
 .scrollspy ul li a {
   text-decoration: none;
-  color: #333;
-  font-size: 16px;
+  color: rgb(84, 83, 83);
+  font-size: 17px;
   transition: color 0.3s ease;
 }
 
@@ -622,19 +586,20 @@ footer {
 }
 
 @media screen and (min-width: 769px) {
-
   #navbar {
     display: none;
   }
-
+  .display {
+    margin-right: 130px;
+  }
   .scrollspy {
     display: block;
     position: fixed;
     top: 50%;
-    left: 0; 
+    right: 0;
     transform: translateY(-50%);
-    background-color: #222; 
-    color: #ffd700; 
+    background-color: #222;
+    color: #ffd700;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -642,14 +607,9 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-
   .scrollspy {
     display: none;
   }
-  .scrollspy-toggle {
-    display: none;
-  }
-
 
   #navbar {
     display: block;
@@ -658,7 +618,7 @@ footer {
     left: 0;
     width: 100%;
     background-color: #222;
-    color: #ffd700; 
+    color: #ffd700;
     z-index: 9999;
   }
 }
