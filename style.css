@@ -8,6 +8,50 @@
     transform: translateX(-50%) translateY(-50%) rotate(360deg);
   }
 }
+@media screen and (max-width: 768px) {
+  * {
+    font-size: 18px;
+  }
+  .divisions h2 {
+    font-size: 39px;
+  }
+  .persona,
+  .project-board {
+    flex-direction: column;
+  }
+  .project-card {
+    width: 90%;
+  }
+  .ui-title center {
+    font-size: 34px;
+    margin: 45px 0 0 0;
+  }
+  .occupation {
+    font-size: 25px;
+  }
+  .wrapper {
+    flex-direction: column;
+  }
+  .button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  * {
+    font-size: 16px;
+  }
+  .divisions h2 {
+    font-size: 27px;
+  }
+  .ui-title center {
+    font-size: 25px;
+  }
+  .occupation {
+    font-size: 17px;
+  }
+}
 
 * {
   margin: 0;
@@ -90,10 +134,10 @@ h2 {
 center {
   color: #fffbf1;
   text-shadow: 0 20px 25px #2e2e31, 0 40px 60px #2e2e31;
-  font-size: 90px;
+  font-size: 68px;
   font-weight: bold;
   text-decoration: none;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
   margin: 0;
 }
 
@@ -103,8 +147,8 @@ center {
 
 .divisions {
   min-height: fit-content;
-  margin: auto;
-  width: 95vw;
+  margin: 100px auto;
+  width: 80vw;
   background: rgba(185, 185, 185, 0.1);
   border-radius: 40px;
   padding: 10px;
@@ -284,19 +328,8 @@ footer {
   justify-content: center;
 }
 
-@media screen and (max-width: 768px) {
-  center {
-    font-size: 50px;
-    margin: 45px 0 0 0;
-  }
-  .occupation {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
 .wrapper {
+  margin: 100px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -378,4 +411,52 @@ footer {
 .button:hover span {
   display: inline-block;
   opacity: 1;
+}
+/* scrollspy */
+.active {
+  color: #fffbf1; /* Active color */
+  font-weight: bold;
+}
+/* Scroll Spy Navigation Styling */
+#navbar {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  z-index: 1000;
+}
+
+#navbar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#navbar ul li {
+  margin-bottom: 10px;
+}
+
+#navbar ul li a {
+  text-decoration: none;
+  color: #664900;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+#navbar ul li a:hover {
+  color: #ffb700; /* Hover color */
+}
+
+#navbar ul li a.active {
+  background: linear-gradient(
+    45deg,
+    #ff7300,
+    #fffb00,
+    #ffffff,
+    #fffb00,
+    #ff7300
+  ); /* Linear gradient background */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
 }

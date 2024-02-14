@@ -144,3 +144,42 @@ nextBtn.addEventListener("click", nextSlide);
 prevBtn.addEventListener("click", prevSlide);
 
 setInterval(nextSlide, 3000);
+
+//scroll spy
+document.addEventListener('DOMContentLoaded', function () {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav ul li a');
+
+  const observerOptions = {
+      rootMargin: '-50px 0px -50px 0px', // Adjust as needed
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+              const targetId = entry.target.id;
+              navLinks.forEach((navLink) => {
+                  navLink.classList.remove('active');
+                  if (navLink.getAttribute('href') === `#${targetId}`) {
+                      navLink.classList.add('active');
+                  }
+              });
+          }
+      });
+  }, observerOptions);
+
+  sections.forEach((section) => {
+      observer.observe(section);
+  });
+
+  // Smooth scrolling for internal links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+          });
+      });
+  });
+});

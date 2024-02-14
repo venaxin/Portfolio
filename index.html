@@ -11,33 +11,35 @@
     ></script>
   </head>
   <body>
-    <div class="header">
-      <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
-      </div>
-    </div>
-    <!--<img src="./images/pfp.jpg" style="float: right; height: 150px;width: 150px; border-radius: 50%; border: 1px solid ;" alt="This is a small profile image of Abdul Rahman Hussain Siddique." > -->
-    <h1 class="ui-title" role="heading" aria-level="1">
-      <div class="persona">
-        <img
-          src="./images/pfp.jpg"
-          style="
-            height: 140px;
-            width: 150px;
-            border-radius: 50%;
-            border: 2px solid whitesmoke;
-            margin: 0 10px;
-          "
-          alt="This is a small profile image of Abdul Rahman Hussain Siddique."
-        />
-      </div>
-      <center>Abdul Rahman Hussain Siddique</center>
-    </h1>
+    <section id="home">
+      <section class="header">
+        <div class="progress-container">
+          <div class="progress-bar" id="myBar"></div>
+        </div>
+      </section>
+      <!--<img src="./images/pfp.jpg" style="float: right; height: 150px;width: 150px; border-radius: 50%; border: 1px solid ;" alt="This is a small profile image of Abdul Rahman Hussain Siddique." > -->
+      <h1 class="ui-title" role="heading" aria-level="1">
+        <div class="persona">
+          <img
+            src="./images/pfp.jpg"
+            style="
+              height: 140px;
+              width: 150px;
+              border-radius: 50%;
+              border: 2px solid whitesmoke;
+              margin: 0 10px;
+            "
+            alt="This is a small profile image of Abdul Rahman Hussain Siddique."
+          />
+        </div>
+        <center>Abdul Rahman Hussain Siddique</center>
+      </h1>
 
-    <h3 class="occupation">Full Stack Web Developer</h3>
+      <h3 class="occupation">Full Stack Web Developer</h3>
 
-    <hr />
-    <div class="about divisions">
+      <hr />
+    </section>
+    <section id="about" class="about divisions">
       <h2>Objective Statement</h2>
       <p>
         Seeking an opportunity in web development where I can leverage my strong
@@ -48,10 +50,10 @@
         to impactful projects, gain practical experience, and develop the
         necessary skills for a successful career in web development.
       </p>
-    </div>
+    </section>
     <hr />
 
-    <div class="qualifications divisions">
+    <section id="education" class="qualifications divisions">
       <h2>Education</h2>
       <p>
         <strong
@@ -61,9 +63,9 @@
         <small>Osmania university • Hyderabad,TS</small>
       </p>
       <hr />
-    </div>
+    </section>
     <hr />
-    <div class="skills divisions">
+    <section id="skills" class="skills divisions">
       <h2>Skills</h2>
       <ul>
         <li>
@@ -75,24 +77,25 @@
         <li>Familiar with version control systems like git</li>
         <li>Familiarity with Azure cloud computing</li>
       </ul>
-    </div>
-    <hr />
-
-    <h2>Projects</h2>
-    <section class="project-board divisions">
-      <!-- dynamically adding projects -->
     </section>
     <hr />
-    <div class="hobby divisions">
+    <section id="projects" class="divisions">
+      <h2>Projects</h2>
+      <div class="project-board">
+        <!-- dynamically adding projects -->
+      </div>
+    </section>
+    <hr />
+    <section id="hobbies" class="hobby divisions">
       <h2>Hobbies</h2>
       <ul>
         <li>Sketching</li>
         <li>Reading</li>
         <li>Football, Cricket</li>
       </ul>
-    </div>
+    </section>
     <hr />
-    <div class="certifications divisions">
+    <section id="certificates" class="certifications divisions">
       <a
         style="color: grey; text-decoration: none"
         onMouseOver="this.style.color='#0F0'"
@@ -108,10 +111,23 @@
         <div class="carousel-slide"></div>
         <div class="next-btn">&gt;</div>
       </div>
-    </div>
+    </section>
     <hr />
+    <nav id="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
     <footer>
-      <div class="wrapper">
+      <section id="contact" class="wrapper">
         <div
           class="button"
           onclick="window.location.href = 'https://www.facebook.com/abdulrahman918';"
@@ -140,11 +156,12 @@
           <i class="fa fa-linkedin"></i>
           <span>LinkedIn</span>
         </div>
-      </div>
+      </section>
       <p class="copyright">
         ©2023 Abdul Rahman Hussain Siddique | All rights reserved
       </p>
     </footer>
+    <!-- <div style="height: 1000px"></div> -->
     <script src="./script.js"></script>
   </body>
 </html>
