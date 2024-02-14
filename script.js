@@ -145,6 +145,11 @@ prevBtn.addEventListener("click", prevSlide);
 
 setInterval(nextSlide, 3000);
 
+
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+  document.querySelector('#navbar ul').classList.toggle('active');
+});
+
 //scroll spy
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll("section");

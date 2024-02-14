@@ -486,16 +486,49 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
+  #navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow-x: auto;
+    background-color: #f1f1f1;
   }
 
   #navbar ul {
-    display: none;
+    display: flex;
+    list-style-type: none;
+    padding: 0;
   }
 
-  #navbar ul.active {
-    display: block;
+  #navbar ul li {
+    margin-right: 10px;
+  }
+
+  #navbar ul li a {
+    text-decoration: none;
+    color: #664900;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    padding: 10px;
+  }
+
+  #navbar ul li a:hover {
+    color: #ffb700; /* Hover color */
+  }
+
+  #navbar ul li a.active {
+    background: linear-gradient(
+      45deg,
+      #ff7300,
+      #fffb00,
+      #ffffff,
+      #fffb00,
+      #ff7300
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
   }
 }
