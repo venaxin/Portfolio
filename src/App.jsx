@@ -3,7 +3,6 @@ import { motion, useInView } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import MeteorShower from "./MeteorShower.jsx";
-import BlackholeGifParallax from "./components/BlackholeGifParallax.jsx";
 import GalaxyParallax from "./components/GalaxyParallax.jsx";
 const ProjectCardLazy = lazy(() => import("./components/ProjectCard.jsx"));
 const CaseStudyLazy = lazy(() => import("./components/CaseStudy.jsx"));
@@ -147,10 +146,8 @@ function App() {
       {/* Galaxy parallax — always on */}
       <GalaxyParallax disabled={false} opacity={0.12} />
 
-      {/* BH GIF parallax — desktop only (too heavy on mobile) */}
-      {!isMobile && !prefersReduced && (
-        <BlackholeGifParallax disabled={false} opacity={0.16} />
-      )}
+      {/* Atmospheric glow — pure CSS, zero texture cost */}
+      <AtmosphericGlow />
 
       {/* Stars + meteors — always on, respects prefers-reduced-motion */}
       <MeteorShower
@@ -451,6 +448,64 @@ function App() {
           onClose={() => setOpenCaseStudy(null)}
         />
       </Suspense>
+    </div>
+  );
+}
+
+// Lightweight pure-CSS atmospheric glow — replaces animated GIF parallax.
+// Each div is a radial-gradient promoted to its own compositor layer.
+// Transform changes on scroll are handled entirely on the GPU.
+function AtmosphericGlow() {
+  return (
+    <div
+      className="pointer-events-none fixed inset-0 z-[4] hidden sm:block"
+      aria-hidden="true"
+    >
+      {/* Violet nebula — upper left */}
+      <div
+        className="absolute rounded-full"
+        style={{
+          left: "-8vw",
+          top: "4vh",
+          width: "55vw",
+          height: "55vw",
+          background:
+            "radial-gradient(closest-side, rgba(120,40,200,0.22), transparent)",
+          transform:
+            "translateY(calc(var(--scroll-y, 0px) * -0.025))",
+          willChange: "transform",
+        }}
+      />
+      {/* Amber accent — right side */}
+      <div
+        className="absolute rounded-full"
+        style={{
+          right: "-6vw",
+          top: "28vh",
+          width: "48vw",
+          height: "48vw",
+          background:
+            "radial-gradient(closest-side, rgba(245,158,11,0.10), transparent)",
+          transform:
+            "translateY(calc(var(--scroll-y, 0px) * -0.04))",
+          willChange: "transform",
+        }}
+      />
+      {/* Deep indigo — bottom center */}
+      <div
+        className="absolute rounded-full"
+        style={{
+          left: "22vw",
+          bottom: "-8vh",
+          width: "52vw",
+          height: "52vw",
+          background:
+            "radial-gradient(closest-side, rgba(75,0,130,0.28), transparent)",
+          transform:
+            "translateY(calc(var(--scroll-y, 0px) * -0.015))",
+          willChange: "transform",
+        }}
+      />
     </div>
   );
 }

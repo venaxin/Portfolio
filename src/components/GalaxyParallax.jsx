@@ -129,7 +129,7 @@ export default function GalaxyParallax({ disabled = false, opacity = 0.14 }) {
           willChange: "transform",
           opacity: Math.max(0, opacity - 0.04),
           mixBlendMode: "screen",
-          filter: "saturate(1.1) brightness(1.02) blur(0.2px)",
+          filter: "saturate(1.1) brightness(1.02)",
           ...maskStyle,
         }}
       >
