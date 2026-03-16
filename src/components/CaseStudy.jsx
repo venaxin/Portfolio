@@ -3,7 +3,7 @@ import { motion as Motion, AnimatePresence } from "framer-motion";
 import { FiX, FiExternalLink } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 
-export default function CaseStudy({ project, onClose, eightBit = false }) {
+export default function CaseStudy({ project, onClose }) {
   const isOpen = !!project;
 
   const escHandler = useCallback(
@@ -45,9 +45,7 @@ export default function CaseStudy({ project, onClose, eightBit = false }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className={`fixed inset-0 z-50 bg-black/60 ${
-          eightBit ? "" : "backdrop-blur-sm"
-        } flex items-center justify-center p-4`}
+        className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
         onClick={(e) => {
           if (e.target === e.currentTarget) onClose?.();
         }}
@@ -57,11 +55,7 @@ export default function CaseStudy({ project, onClose, eightBit = false }) {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 20, opacity: 0 }}
           transition={{ type: "spring", stiffness: 260, damping: 24 }}
-          className={`relative w-full max-w-5xl max-h-[calc(100vh-2rem)] flex flex-col overflow-hidden ${
-            eightBit
-              ? "pixel-card"
-              : "rounded-2xl border border-white/10 bg-white/5"
-          } text-white shadow-xl`}
+          className="relative w-full max-w-5xl max-h-[calc(100vh-2rem)] flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 text-white shadow-xl"
         >
           {image && (
             <div className="relative h-56 w-full overflow-hidden flex-shrink-0">
@@ -81,11 +75,7 @@ export default function CaseStudy({ project, onClose, eightBit = false }) {
           <button
             aria-label="Close"
             onClick={onClose}
-            className={`absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center ${
-              eightBit
-                ? "pixel-button"
-                : "rounded-full bg-black/50 hover:bg-black/70"
-            } text-white`}
+            className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-black/50 hover:bg-black/70 text-white"
           >
             <FiX />
           </button>
@@ -114,9 +104,7 @@ export default function CaseStudy({ project, onClose, eightBit = false }) {
                     href={demoLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-2 ${
-                      eightBit ? "pixel-button" : "rounded-md btn-accent"
-                    } px-3 py-2 text-sm font-semibold`}
+                    className="inline-flex items-center gap-2 rounded-md btn-accent px-3 py-2 text-sm font-semibold"
                   >
                     <FiExternalLink /> Live
                   </a>
@@ -126,11 +114,7 @@ export default function CaseStudy({ project, onClose, eightBit = false }) {
                     href={repoLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-2 ${
-                      eightBit
-                        ? "pixel-button"
-                        : "rounded-md border border-white/20 hover:border-white/40"
-                    } px-3 py-2 text-sm font-semibold`}
+                    className="inline-flex items-center gap-2 rounded-md border border-white/20 hover:border-white/40 px-3 py-2 text-sm font-semibold"
                   >
                     <FaGithub /> Code
                   </a>
