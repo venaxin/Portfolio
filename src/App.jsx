@@ -3,7 +3,6 @@ import { motion, useInView } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import MeteorShower from "./MeteorShower.jsx";
-import GalaxyParallax from "./components/GalaxyParallax.jsx";
 const ProjectCardLazy = lazy(() => import("./components/ProjectCard.jsx"));
 const CaseStudyLazy = lazy(() => import("./components/CaseStudy.jsx"));
 const ResumeSectionLazy = lazy(() => import("./components/ResumeSection.jsx"));
@@ -128,35 +127,17 @@ function App() {
         },
       };
 
-  // Projects container variants for staggered reveal
-  const gridVariants = prefersReduced
-    ? undefined
-    : {
-        hidden: {},
-        visible: {
-          transition: { staggerChildren: 0.08, delayChildren: 0.1 },
-        },
-      };
 
   return (
     <div className="relative min-h-screen">
       {/* Gradient background */}
       <div className="fixed inset-0 gradient-sky z-0"></div>
 
-      {/* Galaxy parallax — always on */}
-      <GalaxyParallax disabled={false} opacity={0.12} />
-
       {/* Atmospheric glow — pure CSS, zero texture cost */}
       <AtmosphericGlow />
 
       {/* Stars + meteors — always on, respects prefers-reduced-motion */}
-      <MeteorShower
-        disabled={prefersReduced}
-        density={0.7}
-        sizeScale={1}
-        fps={30}
-        showStars={true}
-      />
+      <MeteorShower disabled={prefersReduced} density={0.7} fps={30} />
 
       <div className="relative z-20">
         {sections.map((section) => (
@@ -327,13 +308,7 @@ function App() {
                   </div>
                 )}
                 {section.id === "projects" && (
-                  <motion.div
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
-                    variants={gridVariants}
-                    initial={gridVariants ? "hidden" : false}
-                    whileInView={gridVariants ? "visible" : undefined}
-                    viewport={{ once: false, amount: 0.2 }}
-                  >
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                     <Suspense
                       fallback={<div className="text-white/70">Loading…</div>}
                     >
@@ -342,12 +317,12 @@ function App() {
                           key={p.title}
                           project={p}
                           index={i}
-                          lowPower={prefersReduced}
+
                           onOpenCaseStudy={() => setOpenCaseStudy(p)}
                         />
                       ))}
                     </Suspense>
-                  </motion.div>
+                  </div>
                 )}
                 {section.id === "contact" && (
                   <div>
