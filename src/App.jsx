@@ -6,8 +6,8 @@ import MeteorShower from "./MeteorShower.jsx";
 const ProjectCardLazy = lazy(() => import("./components/ProjectCard.jsx"));
 const CaseStudyLazy = lazy(() => import("./components/CaseStudy.jsx"));
 const ResumeSectionLazy = lazy(() => import("./components/ResumeSection.jsx"));
-const ExperienceSectionLazy = lazy(() =>
-  import("./components/ExperienceSection.jsx")
+const ExperienceSectionLazy = lazy(
+  () => import("./components/ExperienceSection.jsx"),
 );
 import projects from "./data/projects.js";
 import resumePdf from "./data/Resume.pdf";
@@ -22,7 +22,7 @@ function App() {
       { id: "projects", label: "Projects" },
       { id: "contact", label: "Contact" },
     ],
-    []
+    [],
   );
 
   const [activeSection, setActiveSection] = useState("home");
@@ -34,7 +34,7 @@ function App() {
   // Mount-on-demand: track which sections have been seen
   const mountedSectionsRef = useRef(new Set(["home"]));
   const isNarrowAtMountRef = useRef(
-    typeof window !== "undefined" ? window.innerWidth <= 768 : false
+    typeof window !== "undefined" ? window.innerWidth <= 768 : false,
   );
   const [, forceRerender] = useState(0);
 
@@ -70,7 +70,7 @@ function App() {
       requestAnimationFrame(() => {
         document.documentElement.style.setProperty(
           "--scroll-y",
-          `${window.scrollY}px`
+          `${window.scrollY}px`,
         );
         ticking = false;
       });
@@ -94,7 +94,7 @@ function App() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0, rootMargin: "-40% 0px -40% 0px" },
     );
 
     sections.forEach((section) => {
@@ -127,7 +127,6 @@ function App() {
         },
       };
 
-
   return (
     <div className="relative min-h-screen">
       {/* Gradient background */}
@@ -154,7 +153,7 @@ function App() {
               section.id === "home") && (
               <div className="text-center">
                 <h2 className="text-4xl font-bold text-white mb-4">
-                  {section.label}
+                  Abdul Rahman Hussain Siddique
                 </h2>
                 {section.id === "home" && (
                   <div>
@@ -163,17 +162,19 @@ function App() {
                     </p>
                     {prefersReduced ? (
                       <span className="text-2xl text-yellow-400 font-semibold">
-                        Software Developer
+                        AI-First Software Engineer
                       </span>
                     ) : (
                       <TypeAnimation
                         sequence={[
-                          "Software Developer",
-                          1000,
-                          "Full‑stack Developer",
-                          1000,
-                          "Frontend Engineer",
-                          1000,
+                          "AI-First Software Engineer",
+                          1200,
+                          "ML Systems Architect",
+                          1200,
+                          "Full-Stack Developer",
+                          1200,
+                          "Software Engineer",
+                          1200,
                         ]}
                         wrapper="span"
                         repeat={Infinity}
@@ -186,33 +187,35 @@ function App() {
                   <div className="max-w-5xl mx-auto grid gap-4 sm:grid-cols-2">
                     <div className="p-4 rounded-lg border border-white/10 bg-white/5">
                       <h3 className="text-xl font-semibold mb-2">
-                        Software Developer
+                        AI-First Software Engineer
                       </h3>
 
                       <p className="text-sm text-white/80">
-                        CS Master's student at UB and former Software Developer
-                        at Goodz, where I built and optimized production systems
-                        across both web and mobile. I've led front-end
-                        migrations to Angular, engineered high-performance UI
-                        components, implemented real-time features with
-                        WebSockets, and improved React Native app stability,
-                        navigation, and build performance. I care deeply about
-                        UX, performance, and delivering reliable experiences
-                        under real constraints.
+                        CS Master's student at UB and Graduate Research
+                        Assistant building production AI systems — from
+                        ONNX-optimized inference pipelines and RAG-based
+                        retrieval to agentic desktop tools powered by MCP and
+                        Gemini 2.5 Flash. Formerly Software Developer at Goodz
+                        and Youro, where I shipped production Angular, React
+                        Native, and WebSocket systems at scale. I bridge deep
+                        ML engineering with full-stack execution — from model
+                        optimization to polished user interfaces.
                       </p>
 
                       <div className="mt-3 flex flex-wrap gap-2 text-xs">
                         {[
+                          "Python",
+                          "PyTorch",
+                          "FastAPI",
+                          "FAISS",
+                          "ONNX",
+                          "LangChain / LangGraph",
+                          "React / React Native",
                           "Angular",
-                          "React Native",
-                          "JavaScript / TypeScript",
-                          "PHP + MySQL",
-                          "WebSockets",
-                          "Firebase (FCM)",
-                          "Mobile Performance",
-                          "UI/UX Engineering",
-                          "Bitbucket / Git",
-                          "OpenStreetMap APIs",
+                          "TypeScript",
+                          "AWS (S3, CloudFront)",
+                          "WebSockets / STOMP",
+                          "Tauri / Rust",
                         ].map((s) => (
                           <span
                             key={s}
@@ -228,11 +231,10 @@ function App() {
                       <h3 className="text-xl font-semibold mb-2">Now / Next</h3>
                       <ul className="text-sm text-white/80 space-y-1">
                         <li>
-                          Now: Building CommitLife, SplitVoice, and PantryChef.
+                          Now: RA research (VLM pipeline + Tauri desktop app), Venyx MCP agent, LifeLogger.
                         </li>
                         <li>
-                          Next: Seeking Software Developer Internship — Winter
-                          2026.
+                          Next: Seeking AI/ML or Software Engineering roles — Summer / Fall 2026.
                         </li>
                       </ul>
                       <div className="mt-3 flex flex-wrap gap-3">
@@ -265,11 +267,11 @@ function App() {
                       <div className="grid sm:grid-cols-3 gap-3 text-sm text-white/80">
                         <div>
                           <div className="font-medium text-white">
-                            Accessible‑first
+                            Systems that scale
                           </div>
                           <p className="text-white/70">
-                            WCAG-friendly, keyboard/SR labels, motion‑safe
-                            defaults.
+                            Inference optimization, memory-safe pipelines, and
+                            production-grade AI that doesn't break under load.
                           </p>
                         </div>
                         <div>
@@ -278,13 +280,14 @@ function App() {
                           </div>
                           <p className="text-white/70">
                             Clean architecture, meaningful tests, performance
-                            budgets.
+                            budgets — from unit tests to CI/CD build pipelines.
                           </p>
                         </div>
                         <div>
                           <div className="font-medium text-white">Impact</div>
                           <p className="text-white/70">
-                            Shipping features that solve real user problems.
+                            Shipping AI features that solve real user problems —
+                            not demos, but deployed systems.
                           </p>
                         </div>
                       </div>
@@ -445,8 +448,7 @@ function AtmosphericGlow() {
           height: "55vw",
           background:
             "radial-gradient(closest-side, rgba(120,40,200,0.22), transparent)",
-          transform:
-            "translateY(calc(var(--scroll-y, 0px) * -0.025))",
+          transform: "translateY(calc(var(--scroll-y, 0px) * -0.025))",
           willChange: "transform",
         }}
       />
@@ -460,8 +462,7 @@ function AtmosphericGlow() {
           height: "48vw",
           background:
             "radial-gradient(closest-side, rgba(245,158,11,0.10), transparent)",
-          transform:
-            "translateY(calc(var(--scroll-y, 0px) * -0.04))",
+          transform: "translateY(calc(var(--scroll-y, 0px) * -0.04))",
           willChange: "transform",
         }}
       />
@@ -475,8 +476,7 @@ function AtmosphericGlow() {
           height: "52vw",
           background:
             "radial-gradient(closest-side, rgba(75,0,130,0.28), transparent)",
-          transform:
-            "translateY(calc(var(--scroll-y, 0px) * -0.015))",
+          transform: "translateY(calc(var(--scroll-y, 0px) * -0.015))",
           willChange: "transform",
         }}
       />

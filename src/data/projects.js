@@ -1,41 +1,242 @@
 const projects = [
   // New 8 Projects (2025)
   {
-    title: "Venyx: Hierarchical Multi-Agent OS Assistant",
+    title: "Venyx: Agentic Desktop Productivity OS",
     year: 2025,
     status: "Ongoing",
     description:
-      "A centralized, hierarchical intelligence layer for macOS that decomposes complex user intents into executable sub-tasks using a Lead Agent orchestrator and specialized Sub-Agents.",
-    tech: ["Swift", "SwiftUI", "Gemini API", "Python"],
+      "A Python desktop app built with Flet and a FastAPI backend with MCP (Model Context Protocol) integration that orchestrates Gemini 2.5 Flash to act as a true desktop agent — reading Notion pages, managing files, querying knowledge bases, and executing tasks through a structured tool-call loop.",
+    tech: ["Python", "Flet", "FastAPI", "MCP", "Gemini 2.5 Flash"],
     image:
       "https://images.unsplash.com/photo-1677442d019cecf8514f0c04e7a36a3d18b440f23?q=80&w=1200&auto=format&fit=crop",
     repoLink: "#",
     caseStudy: {
       problem:
-        "macOS lacks a unified intelligence layer that can intelligently decompose complex user intents across multiple applications and delegate to specialized agents.",
+        "Desktop productivity tools are siloed — notes in Notion, files on disk, context in your head. There's no unified agent that can read your workspace, understand intent, and act across tools without manual switching.",
       constraints: [
-        "Cross-application orchestration",
-        "Context-aware task execution",
-        "Unified command interface",
-        "Native macOS integration",
+        "Real-time tool-call loop without blocking the UI",
+        "MCP server interoperability across multiple tool providers",
+        "Structured output parsing from Gemini 2.5 Flash",
+        "Secure local file and Notion API access",
       ],
       approach:
-        "Architected a Hierarchical Multi-Agent System (HMAS) where a Lead Agent receives natural language input, uses Gemini API to decompose tasks, and delegates to specialized Sub-Agents (File Manager, Web Searcher, App Automator). Implemented in Swift with SwiftUI for native macOS UI and Python backend for core logic orchestration.",
+        "Built a Flet desktop UI (pure Python, cross-platform) backed by a FastAPI server that exposes MCP-compatible tool definitions (Notion reader, file manager, knowledge search). Gemini 2.5 Flash drives a tool-call loop: it reads the user's intent, selects tools, receives structured results, and iterates until the task is complete. The agent can ingest a Notion page, summarize it, cross-reference files on disk, and return a synthesized response — all in one invocation.",
       results: [
-        "Seamless cross-application task orchestration",
-        "Context-aware execution with multi-agent coordination",
-        "Unified natural language command interface",
+        "End-to-end agentic workflows across Notion + local filesystem",
+        "Structured tool-call loop with Gemini 2.5 Flash reasoning",
+        "MCP protocol enables plug-and-play tool extension",
       ],
       highlights: [
-        "Hierarchical Multi-Agent System architecture",
-        "Lead Agent orchestration with Gemini API",
-        "Specialized Sub-Agents for different domains",
-        "Native macOS SwiftUI interface",
-        "Cross-application automation",
+        "Flet desktop UI — pure Python, cross-platform native app",
+        "MCP (Model Context Protocol) tool orchestration",
+        "Gemini 2.5 Flash as reasoning engine",
+        "FastAPI async backend with structured tool routing",
+        "Notion API integration for knowledge ingestion",
+        "Extensible tool registry — add new MCP servers without core changes",
       ],
       links: [
+        { label: "MCP Spec", href: "https://modelcontextprotocol.io/" },
         { label: "Gemini API", href: "https://ai.google.dev/" },
-        { label: "SwiftUI", href: "https://developer.apple.com/swiftui/" },
+      ],
+      images: [],
+    },
+  },
+  {
+    title: "Winter Path Estimator",
+    year: 2025,
+    status: "Completed",
+    description:
+      "Semantic segmentation model using U-Net to detect navigable paths in snow-covered environments, achieving 85.20% IoU — enabling safer autonomous navigation in winter conditions.",
+    tech: ["Python", "PyTorch", "U-Net", "OpenCV", "Semantic Segmentation"],
+    image:
+      "https://images.unsplash.com/photo-1491002052546-bf38f186af56?q=80&w=1200&auto=format&fit=crop",
+    repoLink: "#",
+    caseStudy: {
+      problem:
+        "Snow-covered terrain makes path detection extremely difficult for autonomous systems — standard edge detection fails when roads, sidewalks, and surroundings merge into a uniform white surface.",
+      constraints: [
+        "High visual ambiguity in snow-covered scenes",
+        "Limited labeled winter-condition datasets",
+        "Real-time inference requirement for navigation use",
+        "Robust to varying snow density and lighting",
+      ],
+      approach:
+        "Fine-tuned a U-Net architecture on a curated winter navigation dataset with custom augmentation (snow overlay, contrast jitter, random occlusion) to simulate real-world degradation. Used an encoder-decoder with skip connections to preserve spatial detail for precise boundary segmentation. Evaluated with mean IoU across navigable/non-navigable/obstacle classes.",
+      results: [
+        "85.20% mean IoU on winter path segmentation",
+        "Robust performance across variable snow density and lighting",
+        "Outperformed baseline edge-detection methods by >30% IoU",
+      ],
+      highlights: [
+        "U-Net semantic segmentation for snow-covered navigation",
+        "Custom winter augmentation pipeline",
+        "85.20% mean IoU on held-out test set",
+        "Skip-connection architecture preserves spatial path boundaries",
+      ],
+      links: [
+        { label: "U-Net Paper", href: "https://arxiv.org/abs/1505.04597" },
+        { label: "PyTorch", href: "https://pytorch.org/" },
+      ],
+      images: [],
+    },
+  },
+  {
+    title: "Spectral Vision",
+    year: 2025,
+    status: "Ongoing",
+    description:
+      "Mixed reality application for Meta Quest 3S that overlays WiFi signal strength heatmaps and thermal imaging data onto physical spaces — turning invisible infrastructure into visible, spatially-anchored intelligence.",
+    tech: ["Meta Quest 3S", "Unity", "C#", "Mixed Reality Toolkit", "WiFi APIs", "Thermal Imaging"],
+    image:
+      "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=1200&auto=format&fit=crop",
+    repoLink: "#",
+    caseStudy: {
+      problem:
+        "Network engineers and facilities teams have no spatial context for signal dead zones or heat sources — they rely on flat floor plans and handheld meters that can't convey the 3D distribution of invisible signals.",
+      constraints: [
+        "Real-time spatial anchor persistence on Meta Quest 3S",
+        "Low-latency WiFi RSSI polling without disrupting normal traffic",
+        "Thermal data alignment with physical space geometry",
+        "Comfort and occlusion for mixed reality overlay rendering",
+      ],
+      approach:
+        "Built a Unity MR application using Meta's Mixed Reality Toolkit for Quest 3S passthrough mode. WiFi RSSI data is polled and mapped to a spatial heatmap rendered as volumetric overlays anchored to room geometry. Thermal data from a connected sensor is projected onto surfaces using spatial calibration. Users walk through the space and see signal strength and heat distribution in real time.",
+      results: [
+        "Spatially-anchored WiFi heatmaps on Meta Quest 3S passthrough",
+        "Real-time thermal overlay aligned to room geometry",
+        "Intuitive MR interface for invisible infrastructure diagnostics",
+      ],
+      highlights: [
+        "Meta Quest 3S mixed reality with room-scale spatial anchors",
+        "WiFi RSSI heatmap rendered as volumetric MR overlay",
+        "Thermal imaging projection onto physical surfaces",
+        "Mixed Reality Toolkit + Unity for MR development",
+      ],
+      links: [
+        { label: "Meta MR Toolkit", href: "https://developers.meta.com/horizon/develop/" },
+        { label: "Unity", href: "https://unity.com/" },
+      ],
+      images: [],
+    },
+  },
+  {
+    title: "Pulse",
+    year: 2025,
+    status: "Ongoing",
+    description:
+      "An agentic professional presence engine that keeps your LinkedIn, portfolio, and personal brand in sync with your actual work — using a Draft-Critique-Refine loop to generate polished updates from raw activity logs.",
+    tech: ["Python", "FastAPI", "LangGraph", "Gemini API", "LinkedIn API"],
+    image:
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=1200&auto=format&fit=crop",
+    repoLink: "#",
+    caseStudy: {
+      problem:
+        "Professionals let their public presence go stale because writing polished LinkedIn posts or portfolio updates from raw work notes is friction-heavy and time-consuming. The gap between what you've done and what the world sees grows over time.",
+      constraints: [
+        "Output must sound like the user, not generic AI",
+        "Draft-Critique-Refine loop must converge quickly (≤3 iterations)",
+        "LinkedIn API rate limits and content policy compliance",
+        "Multi-platform sync without duplication",
+      ],
+      approach:
+        "Built a LangGraph-powered agentic pipeline: users log raw activity (meeting notes, commits, milestones); a Drafter agent generates platform-specific content; a Critic agent evaluates tone, specificity, and brand alignment; a Refiner agent iterates until the critique score passes threshold. FastAPI backend handles scheduling and LinkedIn API publishing. Users approve before any post goes live.",
+      results: [
+        "Draft-Critique-Refine loop converges in ≤2 iterations on average",
+        "Platform-specific tone adaptation (LinkedIn vs. portfolio)",
+        "One-click review-and-publish workflow",
+      ],
+      highlights: [
+        "LangGraph agentic Draft-Critique-Refine pipeline",
+        "Tone and brand-alignment critique scoring",
+        "LinkedIn API integration with human-in-the-loop approval",
+        "Multi-platform output (LinkedIn, portfolio, bios)",
+        "Activity log ingestion from notes, commits, milestones",
+      ],
+      links: [
+        { label: "LangGraph", href: "https://www.langchain.com/langgraph" },
+        { label: "LinkedIn API", href: "https://developer.linkedin.com/" },
+      ],
+      images: [],
+    },
+  },
+  {
+    title: "LifeLogger",
+    year: 2025,
+    status: "Ongoing",
+    description:
+      "A passive agentic semantic pipeline that automatically indexes your digital life — screenshots, notes, browsing, conversations — into a queryable knowledge base you can ask questions about in natural language.",
+    tech: ["Python", "FastAPI", "FAISS", "Whisper", "LangChain", "SQLite"],
+    image:
+      "https://images.unsplash.com/photo-1512314889357-e157c22f938d?q=80&w=1200&auto=format&fit=crop",
+    repoLink: "#",
+    caseStudy: {
+      problem:
+        "Knowledge workers lose context constantly — a screenshot you took last month, a conversation you had, a tab you visited. There's no system that passively captures and semantically indexes your digital activity so you can retrieve it with a natural language query.",
+      constraints: [
+        "Passive capture with minimal CPU/battery impact",
+        "Privacy-first: all processing local, no cloud upload",
+        "Multimodal ingestion: text, images, audio",
+        "Query latency must feel instant (<500ms)",
+      ],
+      approach:
+        "Background daemon captures periodic screenshots (OCR via Tesseract), audio clips (Whisper transcription), and browser activity. All content is chunked, embedded, and stored in a FAISS index with SQLite metadata. LangChain orchestrates RAG-based query answering: user asks 'what was that article about quantum computing I read?' and the pipeline retrieves the closest indexed chunks and synthesizes an answer.",
+      results: [
+        "Fully local multimodal indexing pipeline (screenshots, audio, text)",
+        "Sub-500ms RAG query response on local FAISS index",
+        "Privacy-preserving: zero data leaves the device",
+      ],
+      highlights: [
+        "Passive background capture with minimal resource footprint",
+        "Whisper audio transcription + Tesseract OCR for multimodal ingestion",
+        "FAISS semantic index with LangChain RAG query layer",
+        "SQLite metadata store for temporal and source filtering",
+        "Fully offline, privacy-first architecture",
+      ],
+      links: [
+        { label: "FAISS", href: "https://faiss.ai/" },
+        { label: "Whisper", href: "https://openai.com/research/whisper" },
+        { label: "LangChain", href: "https://www.langchain.com/" },
+      ],
+      images: [],
+    },
+  },
+  {
+    title: "Capital Command",
+    year: 2025,
+    status: "Completed",
+    description:
+      "Enterprise financial analytics dashboard with real-time portfolio tracking, P&L visualization, and AWS-hosted infrastructure — built to handle large transaction datasets with sub-second query response.",
+    tech: ["React", "TypeScript", "AWS", "Node.js", "PostgreSQL", "Chart.js"],
+    image:
+      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop",
+    repoLink: "#",
+    caseStudy: {
+      problem:
+        "Financial teams working with large portfolios need a unified dashboard that aggregates transactions, computes P&L in real time, and renders complex time-series charts without UI lag — existing tools either lack customization or are too expensive for mid-size teams.",
+      constraints: [
+        "Sub-second response on 100k+ transaction queries",
+        "Real-time P&L recalculation on data update",
+        "Role-based access control for multi-user teams",
+        "AWS deployment with cost-efficient scaling",
+      ],
+      approach:
+        "React + TypeScript frontend with Chart.js for time-series P&L, holdings breakdown, and allocation visualizations. Node.js backend with PostgreSQL handles aggregation queries with indexed materialized views for fast recalculation. Deployed on AWS (EC2 + RDS + CloudFront for static assets) with environment-based config for cost control. RBAC middleware gates data access by user role.",
+      results: [
+        "Sub-second P&L query response on 100k+ transaction datasets",
+        "Real-time chart updates on portfolio changes",
+        "AWS deployment with CloudFront static asset delivery",
+        "Role-based access control for team environments",
+      ],
+      highlights: [
+        "React + TypeScript enterprise dashboard",
+        "Chart.js time-series P&L and portfolio visualization",
+        "PostgreSQL materialized views for fast aggregation",
+        "AWS EC2 + RDS + CloudFront deployment",
+        "RBAC middleware for multi-user access control",
+      ],
+      links: [
+        { label: "Chart.js", href: "https://www.chartjs.org/" },
+        { label: "AWS", href: "https://aws.amazon.com/" },
       ],
       images: [],
     },
@@ -175,134 +376,6 @@ const projects = [
         { label: "Live App", href: "https://lockin.nyc" },
         { label: "GitHub", href: "https://github.com/venaxin/Lock-IN" },
         { label: "Gemini API", href: "https://ai.google.dev/" },
-      ],
-      images: [],
-    },
-  },
-  {
-    title: "Zenith Planner: High-Performance Productivity Suite",
-    year: 2025,
-    status: "Completed",
-    description:
-      "A robust task management system with complex drag-and-drop functionality across Daily, Weekly, and Monthly views, featuring state persistence and hierarchical task organization.",
-    tech: ["JavaScript", "React", "Node.js", "PostgreSQL"],
-    image:
-      "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1200&auto=format&fit=crop",
-    repoLink: "#",
-    caseStudy: {
-      problem:
-        "Users need a high-speed task management system with multiple temporal views without data loss when switching between Daily, Weekly, and Monthly perspectives.",
-      constraints: [
-        "Complex drag-and-drop across different views",
-        "State persistence without data loss",
-        "Real-time task updates",
-        "Hierarchical task organization",
-      ],
-      approach:
-        "Implemented complex Drag-and-Drop (DnD) functionality using React with state management ensuring seamless transitions between temporal views. Built a robust backend with PostgreSQL for state persistence. Interactive calendar views with real-time updates and hierarchical task organization using a tree-based data structure.",
-      results: [
-        "Seamless view transitions with zero data loss",
-        "High-performance drag-and-drop across all views",
-        "Real-time collaborative updates",
-      ],
-      highlights: [
-        "Complex drag-and-drop functionality",
-        "Multiple temporal views (Daily, Weekly, Monthly)",
-        "State persistence architecture",
-        "Hierarchical task organization",
-        "Real-time task updates",
-        "Interactive calendar interfaces",
-      ],
-      links: [
-        { label: "React", href: "https://react.dev/" },
-        { label: "PostgreSQL", href: "https://www.postgresql.org/" },
-      ],
-      images: [],
-    },
-  },
-  {
-    title: "Algorithmic Stock Analysis & RL Trading Policy",
-    year: 2025,
-    status: "Completed",
-    description:
-      "A big data system leveraging PySpark for technical indicator calculation and Reinforcement Learning to automate trading decisions on high-frequency market data.",
-    tech: ["PySpark", "Python", "Pandas", "Reinforcement Learning", "RLlib"],
-    image:
-      "https://images.unsplash.com/photo-1611974789855-9c2a0a7fbda1?q=80&w=1200&auto=format&fit=crop",
-    repoLink: "#",
-    caseStudy: {
-      problem:
-        "Identifying profitable trading signals in massive datasets and automating decision-making requires both efficient data processing and intelligent policy learning.",
-      constraints: [
-        "Large-scale data processing",
-        "Technical indicator calculation at scale",
-        "Real-time decision making",
-        "Risk management in RL policies",
-      ],
-      approach:
-        "Leveraged PySpark for large-scale data processing, calculating technical indicators like RSI (Relative Strength Index) and identifying price gaps across massive datasets. Developed a Reinforcement Learning policy using RLlib or Stable Baselines that treats the market as an environment where the agent learns to 'Buy,' 'Hold,' or 'Sell' based on processed technical indicators to maximize cumulative returns.",
-      results: [
-        "Efficient processing of high-frequency market data",
-        "Profitable trading signals identified",
-        "Automated decision-making policy learned",
-      ],
-      highlights: [
-        "PySpark-based data processing pipeline",
-        "Technical indicator computation at scale",
-        "Reinforcement Learning trading policy",
-        "Risk-adjusted return optimization",
-        "Buy/Hold/Sell decision automation",
-      ],
-      links: [
-        { label: "PySpark", href: "https://spark.apache.org/" },
-        { label: "RLlib", href: "https://docs.ray.io/en/latest/rllib/" },
-      ],
-      images: [],
-    },
-  },
-  {
-    title: "Automated Security & CI/CD Pipeline",
-    year: 2025,
-    status: "Completed",
-    description:
-      "A security-first deployment pipeline automating vulnerability detection through Docker Scout integration with every code commit to prevent CVEs in production.",
-    tech: ["Docker", "Docker Scout", "GitHub Actions", "Linux Shell"],
-    image:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop",
-    repoLink: "#",
-    caseStudy: {
-      problem:
-        "Containerized applications are vulnerable if security scanning is manual or deferred. CVEs can reach production without automated detection gates.",
-      constraints: [
-        "Automated vulnerability detection",
-        "Pre-production security gates",
-        "Fast build/scan cycle",
-        "CVE reporting and remediation",
-      ],
-      approach:
-        "Built a CI/CD pipeline where every code commit triggers an automated build and scan. Integrated Docker Scout to perform deep image analysis, identifying CVEs (Common Vulnerabilities and Exposures) before the image reaches production. Enforced security gates in the deployment lifecycle using GitHub Actions orchestration.",
-      results: [
-        "Zero CVEs reaching production",
-        "Significantly reduced attack surface",
-        "Fast feedback loop for developers",
-      ],
-      highlights: [
-        "Automated CI/CD pipeline",
-        "Docker Scout integration",
-        "Deep image analysis and scanning",
-        "CVE detection and prevention",
-        "GitHub Actions orchestration",
-        "Security gate enforcement",
-      ],
-      links: [
-        {
-          label: "Docker Scout",
-          href: "https://www.docker.com/products/scout/",
-        },
-        {
-          label: "GitHub Actions",
-          href: "https://github.com/features/actions",
-        },
       ],
       images: [],
     },
@@ -580,13 +653,42 @@ const projects = [
     year: 2023,
     status: "Completed",
     description:
-      "AI-powered healthcare app for tailored medication suggestions and diagnostics (e.g., tumor, pneumonia).",
-    tech: ["Python", "Flask", "CNN", "NLP"],
+      "AI-powered healthcare platform achieving 98.5% diagnostic accuracy using a VGG-16 CNN for medical imaging and a RAG + FAISS retrieval pipeline for medication recommendations. Published in Taylor & Francis AI Frontiers (Oct 2025).",
+    tech: ["Python", "Flask", "VGG-16", "TensorFlow", "FAISS", "RAG", "scikit-learn"],
     image:
       "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop",
-    // demoLink: "#",
     repoLink: "https://github.com/venaxin/HealthAI-Connect",
     metrics: { perf: 92, a11y: 96, bundle: "—" },
+    caseStudy: {
+      problem:
+        "Clinical diagnostic tools are either expensive specialist systems or generic symptom checkers that miss nuance. The goal was to build an accessible, high-accuracy system that handles both medical image diagnostics (tumors, pneumonia) and intelligent medication recommendations from clinical literature.",
+      constraints: [
+        "High accuracy requirement on limited labeled medical imaging data",
+        "Real-time inference for web deployment (Flask)",
+        "Medication retrieval must stay grounded — no hallucination",
+        "Interpretable outputs for medical context",
+      ],
+      approach:
+        "Diagnostic module: Fine-tuned a VGG-16 CNN (TensorFlow/Keras) on chest X-ray and brain MRI datasets for pneumonia and tumor classification. Transfer learning from ImageNet weights allowed high accuracy with limited data. Medication module: Built a RAG pipeline indexing a clinical drug/symptom corpus with FAISS for fast similarity search; a Random Forest classifier handles structured symptom input, with retrieved passages grounding the recommendation. Flask backend exposes both pipelines through a unified REST API.",
+      results: [
+        "98.5% diagnostic accuracy across imaging tasks",
+        "RAG-grounded medication suggestions eliminate hallucination risk",
+        "Published: Taylor & Francis AI Frontiers, October 2025",
+        "Sub-second inference latency on CPU (Flask deployment)",
+      ],
+      highlights: [
+        "VGG-16 fine-tuned for tumor & pneumonia classification",
+        "RAG + FAISS retrieval pipeline for medication grounding",
+        "Random Forest for structured symptom classification",
+        "Published research: Taylor & Francis AI Frontiers (Oct 2025)",
+        "Unified REST API serving both diagnostic and recommendation modules",
+      ],
+      links: [
+        { label: "GitHub", href: "https://github.com/venaxin/HealthAI-Connect" },
+        { label: "Taylor & Francis AI Frontiers", href: "https://www.tandfonline.com/" },
+      ],
+      images: [],
+    },
   },
   {
     title: "Intellibot",
