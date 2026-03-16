@@ -317,7 +317,6 @@ function App() {
                           key={p.title}
                           project={p}
                           index={i}
-
                           onOpenCaseStudy={() => setOpenCaseStudy(p)}
                         />
                       ))}
@@ -488,7 +487,7 @@ function AtmosphericGlow() {
 // Section component with animation
 function Section({ id, children, variants, isMobile }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.25 });
+  const isInView = useInView(ref, { once: true, amount: 0 });
   const enableAnim = variants && !isMobile;
   const initialIsNarrow =
     typeof window !== "undefined" ? window.innerWidth <= 768 : false;
