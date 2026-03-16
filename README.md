@@ -1,4 +1,4 @@
-# Portfolio 2025 (React + Vite)
+# Portfolio (React + Vite)
 
 > A responsive, animated portfolio built with React, Vite, Tailwind CSS, and Framer Motion. Includes an accessibility + themes panel, performance-friendly toggles, and project case studies.
 
@@ -31,7 +31,7 @@ npm run lint
 ## Project structure
 
 ```
-Portfolio-2025/
+Portfolio/
 	src/
 		App.jsx               # Main app, sections & accessibility panel
 		MeteorShower.jsx      # Animated meteor background
@@ -111,7 +111,7 @@ Common keys used by the app: `snapEnabled`, `theme`, `lowPower`, `eightBit`, `st
 This repo ships with `.github/workflows/deploy.yml`. On every push to `main`, it:
 
 - Installs deps, builds the site
-- Sets `BASE_PATH=/Portfolio-2025/` so assets load from the project subpath
+- Sets `BASE_PATH=/Portfolio/` so assets load from the project subpath
 - Copies `index.html` to `404.html` for SPA routing
 - Creates `.nojekyll` and deploys to Pages
 
@@ -120,7 +120,7 @@ One-time setup in GitHub:
 1. Settings → Pages → Build and deployment → Source: GitHub Actions
 2. Push to `main` (or re-run the workflow under Actions)
 
-Your site URL: `https://<your-username>.github.io/Portfolio-2025/`
+Your site URL: `https://<your-username>.github.io/Portfolio/`
 
 If you rename the repo, update the workflow’s `BASE_PATH` to `/<new-name>/`.
 
@@ -145,7 +145,7 @@ If you rename the repo, update the workflow’s `BASE_PATH` to `/<new-name>/`.
 White screen on GitHub Pages
 
 - Ensure Pages Source = GitHub Actions (not "Deploy from a branch")
-- Check asset URLs in the Network tab — if they start with `/assets/...` and 404, set `BASE_PATH` correctly (e.g., `/Portfolio-2025/`)
+- Check asset URLs in the Network tab — if they start with `/assets/...` and 404, set `BASE_PATH` correctly (e.g., `/Portfolio/`)
 - Hard refresh (Cmd+Shift+R) to clear cache after deploy
 - Confirm `404.html` exists in the deployed artifact for SPA routing
 
