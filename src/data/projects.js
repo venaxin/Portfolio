@@ -74,7 +74,10 @@ const projects = [
         "FirecastRL environment extension",
       ],
       links: [
-        { label: "Stable Baselines3", href: "https://stable-baselines3.readthedocs.io/" },
+        {
+          label: "Stable Baselines3",
+          href: "https://stable-baselines3.readthedocs.io/",
+        },
         { label: "Gymnasium", href: "https://gymnasium.farama.org/" },
         { label: "PyTorch", href: "https://pytorch.org/" },
       ],
@@ -292,8 +295,14 @@ const projects = [
         "Security gate enforcement",
       ],
       links: [
-        { label: "Docker Scout", href: "https://www.docker.com/products/scout/" },
-        { label: "GitHub Actions", href: "https://github.com/features/actions" },
+        {
+          label: "Docker Scout",
+          href: "https://www.docker.com/products/scout/",
+        },
+        {
+          label: "GitHub Actions",
+          href: "https://github.com/features/actions",
+        },
       ],
       images: [],
     },
