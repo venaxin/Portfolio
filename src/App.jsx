@@ -192,13 +192,13 @@ function App() {
 
                       <p className="text-sm text-white/80">
                         CS Master's student at UB and Graduate Research
-                        Assistant building production AI systems — from
+                        Assistant building production AI systems, from
                         ONNX-optimized inference pipelines and RAG-based
                         retrieval to agentic desktop tools powered by MCP and
                         Gemini 2.5 Flash. Formerly Software Developer at Goodz
                         and Youro, where I shipped production Angular, React
-                        Native, and WebSocket systems at scale. I bridge deep
-                        ML engineering with full-stack execution — from model
+                        Native, and WebSocket systems at scale. I bridge deep ML
+                        engineering with full-stack execution, from model
                         optimization to polished user interfaces.
                       </p>
 
@@ -231,10 +231,12 @@ function App() {
                       <h3 className="text-xl font-semibold mb-2">Now / Next</h3>
                       <ul className="text-sm text-white/80 space-y-1">
                         <li>
-                          Now: RA research (VLM pipeline + Tauri desktop app), Venyx MCP agent, LifeLogger.
+                          Now: RA research (VLM pipeline + Tauri desktop app),
+                          Venyx MCP agent, LifeLogger.
                         </li>
                         <li>
-                          Next: Seeking AI/ML or Software Engineering roles — Summer / Fall 2026.
+                          Next: Seeking AI/ML or Software Engineering roles —
+                          Summer / Fall 2026.
                         </li>
                       </ul>
                       <div className="mt-3 flex flex-wrap gap-3">
